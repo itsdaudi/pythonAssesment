@@ -24,7 +24,7 @@ def identify_most_common_word(text: str) -> str | None:
             most_common_word = word
             max_count = frequency[word]
     return most_common_word
-                "calculates average length of words" 
+
 def calculate_average_word_length(text: str) -> float:
     if not text or text.strip() == "":
         return 0.0
@@ -36,7 +36,6 @@ def calculate_average_word_length(text: str) -> float:
         total_length += len(word)
     return total_length / len(words)
 
-    "counts paragraphs"   
 def count_paragraphs(text: str) -> int:
     if not text or text.strip() == "":
         return 1
@@ -50,8 +49,8 @@ def count_paragraphs(text: str) -> int:
     if count == 0:
         return 1
     return count
-"counts sentences"
- def count_sentences(text: str) -> int:
+
+def count_sentences(text: str) -> int:
     if not text or text.strip() == "":
         return 1
     # Fixed: use [.!?] not [.,!?] and correct regex
