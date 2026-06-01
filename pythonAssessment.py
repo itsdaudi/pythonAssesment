@@ -6,8 +6,7 @@ def count_specific_word(text: str, word: str) -> int:
     text_lower = text.lower()
     word_lower = word.lower()
     words = re.findall(r'\w+', text_lower)
-    count = words.count(word_lower)
-    return count
+    return words.count(word_lower)
 
 def identify_most_common_word(text: str) ->str: |None:
     if not text or text.strip() == "":
@@ -43,18 +42,17 @@ def calculate_average_word_length(text: str) -> float:
 def count_paragraphs(text: str) -> int:
     if not text or text.strip() == "":
         return 1
-
     paragraphs = re.split(r'\n\s*\n', text.strip())
-    count =0 
-    i= 0
-    while i < len(paragraphs):   
-             if paragraphs[i].strip():
-                count += 1
-             i += 1           
-
+    count = 0
+    i = 0
+    while i < len(paragraphs):
+        if paragraphs[i].strip():
+            count += 1
+        i += 1
     if count == 0:
-        return 1         
-    return count  
+        return 1
+    return count
+
 
     "count sentences"
 def count_sentences(text: str) -> int:
