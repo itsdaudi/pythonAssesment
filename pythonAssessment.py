@@ -8,13 +8,13 @@ def count_specific_word(text: str, word: str) -> int:
     words = re.findall(r'\w+', text_lower)
     return words.count(word_lower)
 
-def identify_most_common_word(text: str) ->str: |None:
+def identify_most_common_word(text: str) -> str | None:
     if not text or text.strip() == "":
         return None
-        words = re.findall(r'\w+', text.lower())
+    words = re.findall(r'\w+', text.lower())
     if not words:
         return None
-        frequency = {}
+    frequency = {}
     for word in words:
         frequency[word] = frequency.get(word, 0) + 1
     most_common_word = words[0]
@@ -23,8 +23,7 @@ def identify_most_common_word(text: str) ->str: |None:
         if frequency[word] > max_count:
             most_common_word = word
             max_count = frequency[word]
-    return most_common_word   
-
+    return most_common_word
                 "calculates average length of words" 
 def calculate_average_word_length(text: str) -> float:
     if not text or text.strip() == "":
