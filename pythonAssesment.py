@@ -50,10 +50,12 @@ def count_paragraphs(text: str) -> int:
         return 1
 
     paragraphs = re.split(r'\n\s*\n', text.strip())
-    count =0            
-    for paragraph in paragraphs:
-        if paragraph.strip():
+    count =0 
+
+    i=0
+    while i < len(paragraphs):        if paragraphs[i].strip():
             count += 1
+        i += 1           
 
             if count == 0:
                 return 1
@@ -64,7 +66,7 @@ def count_sentences(text: str) -> int:
     if not text or text.strip() == "":
         return 1
 
-    sentences = re.split(r'[.!?]+(?=\s|$)', text.strip())
+    sentences = re.split(r'[.!?]+(?:\s|$)', text.strip())
     count = 0
     for sentence in sentences:
         if sentence.strip():
