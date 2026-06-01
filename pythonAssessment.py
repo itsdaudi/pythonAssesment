@@ -50,19 +50,16 @@ def count_paragraphs(text: str) -> int:
     if count == 0:
         return 1
     return count
-
-
-    "count sentences"
-def count_sentences(text: str) -> int:
+"counts sentences"
+ def count_sentences(text: str) -> int:
     if not text or text.strip() == "":
         return 1
-
+    # Fixed: use [.!?] not [.,!?] and correct regex
     sentences = re.split(r'[.!?]+(?:\s|$)', text.strip())
     count = 0
     for sentence in sentences:
         if sentence.strip():
             count += 1
-
     if count == 0:
         return 1
-    return count           
+    return count
