@@ -34,8 +34,7 @@ def calculate_average_word_length(text: str) -> float:
     total_length = 0
     for word in words:
         total_length += len(word)
-    average_length = total_length / len(words)
-    return average_length
+    return total_length / len(words)
 
     "counts paragraphs"   
 def count_paragraphs(text: str) -> int:
