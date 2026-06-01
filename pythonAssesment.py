@@ -51,14 +51,14 @@ def count_paragraphs(text: str) -> int:
 
     paragraphs = re.split(r'\n\s*\n', text.strip())
     count =0 
+    i= 0
+    while i < len(paragraphs):   
+             if paragraphs[i].strip():
+                count += 1
+             i += 1           
 
-    i=0
-    while i < len(paragraphs):        if paragraphs[i].strip():
-            count += 1
-        i += 1           
-
-            if count == 0:
-                return 1
+    if count == 0:
+        return 1         
     return count  
 
     "count sentences"
