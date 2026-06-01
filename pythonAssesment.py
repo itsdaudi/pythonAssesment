@@ -42,4 +42,19 @@ def calculate_average_word_length(text: str) -> float:
     for word in words:
         total_length += len(word)
     average_length = total_length / len(words)
-    return average_length                
+    return average_length
+
+    "counts paragraphs"   
+def count_paragraphs(text: str) -> int:
+    if not text or text.strip() == "":
+        return 1
+
+    paragraphs = re.split(r'\n\s*\n', text.strip())
+    count =0            
+    for paragraph in paragraphs:
+        if paragraph.strip():
+            count += 1
+
+            if count == 0:
+                return 1
+    return count             
